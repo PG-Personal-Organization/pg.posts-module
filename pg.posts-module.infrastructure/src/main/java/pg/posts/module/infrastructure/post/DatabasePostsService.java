@@ -2,11 +2,11 @@ package pg.posts.module.infrastructure.post;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import lombok.val;
 import org.springframework.stereotype.Service;
 import pg.posts.module.domain.post.Post;
 import pg.posts.module.domain.post.PostsService;
 
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -20,11 +20,14 @@ public class DatabasePostsService implements PostsService {
 
     @Override
     public List<Post> findUserPosts(final String userId) {
-        return Collections.emptyList();
+        return postRepository.findByUserId(userId).stream()
+                .map(PostsMapper::toPost)
+                .toList();
     }
 
     @Override
-    public String addPost(Post newPost) {
-        return null;
+    public String addPost(final Post newPost) {
+        val postEntity = PostsMapper.toEntity(newPost);
+        return postRepository.save(postEntity).getId().toString();
     }
 }
