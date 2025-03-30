@@ -18,7 +18,7 @@ public class PostsModuleApplication {
      *
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         SpringApplication.run(PostsModuleApplication.class, args);
     }
 }

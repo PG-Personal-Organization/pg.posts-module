@@ -26,8 +26,7 @@ public class SecurityConfig {
     @Bean
     public Customizer<AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry> postsRequestCustomizer() {
         return requests -> requests.requestMatchers(HttpServicesPaths.POSTS_PATH)
-                .hasRole(Roles.USER.name())
-                ;
+                .hasRole(Roles.USER.name());
     }
 
 
