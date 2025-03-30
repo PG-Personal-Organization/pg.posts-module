@@ -24,5 +24,5 @@ spring:
 remote-cqrs:
   http:
     remote-modules[0]:
-        module-name: context-auth
-        url: ${CONTEXT_AUTH_HOST:http://localhost:8081}/api/cqrs
+      module-name: context-auth
+      url: ${CONTEXT_AUTH_HOST:http://localhost:8081}/api/cqrs

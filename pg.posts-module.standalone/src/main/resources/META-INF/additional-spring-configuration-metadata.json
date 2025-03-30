@@ -15,4 +15,5 @@
       "type": "java.lang.String",
       "description": "Description for remote-cqrs.http.remote-modules[0].url."
     }
-  ] }
+  ]
+}
